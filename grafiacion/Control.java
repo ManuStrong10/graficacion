@@ -136,7 +136,7 @@ public class Control extends JPanel{
         btnCirculo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DialogoCirculo dlgCirculo = new DialogoCirculo(ventana);
+                DialogoCirculo dlgCirculo = new DialogoCirculo(ventana, pantalla);
                 dlgCirculo.setVisible(true);
                 graficarFigura(dlgCirculo.getDatos(),1);
             }

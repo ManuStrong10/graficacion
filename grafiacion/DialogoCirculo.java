@@ -8,18 +8,20 @@ public class DialogoCirculo extends JDialog {
     private JTextField txtCentroX, txtCentroY, txtRadio;
     private JButton btnDibujar;
     private int[] datos;
+    private Pantalla p;
 
-    public DialogoCirculo(Frame padre) {
+    public DialogoCirculo(Frame padre, Pantalla pa) {
         super(padre, "Círculo", true); 
+	this.p = pa;
         datos = new int[3];
         setLayout(new GridLayout(4, 2));  
 
         add(new JLabel("Centro X:"));
-        txtCentroX = new JTextField("60");
+        txtCentroX = new JTextField(String.valueOf(p.getXmouse));
         add(txtCentroX);
 
         add(new JLabel("Centro Y:"));
-        txtCentroY = new JTextField("40");
+        txtCentroY = new JTextField(String.valueOf(p.getYmouse));
         add(txtCentroY);
 
         add(new JLabel("Radio:"));
