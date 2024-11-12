@@ -33,7 +33,6 @@ public class Triangulo {
     public void dibujarConRelleno() {
         relleno = true;
         if (segmentado) segmentado = false;
-
         dibujarTriangulo();
         rellenar();
     }

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class Pixel {
     private int x,y;
     private Color color;
-    public static int tamPixel = 5;
+    public static int tamPixel = 10;
     private boolean pintado;
 
     public Pixel(int x, int y, Color color) {

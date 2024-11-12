@@ -62,10 +62,10 @@ public class Control extends JPanel{
 
     private void addColorPrevio(GridBagConstraints contenedor) {
         colorPrevio = new JPanel();
-        colorPrevio.setBackground(Color.WHITE);
-        colorPrevio.setPreferredSize(new Dimension(50, 50));
-        contenedor.gridx = 8;
-        contenedor.gridy = 0;
+        colorPrevio.setBackground(Color.black);
+        colorPrevio.setPreferredSize(new Dimension(50, 20));
+        contenedor.gridx = 1;
+        contenedor.gridy = 7;
         add(colorPrevio, contenedor);
     }
 
@@ -74,12 +74,12 @@ public class Control extends JPanel{
         btnCuadrado = createButton("Cuadrado", 1, 0, contenedor);
         btnTriangulo = createButton("Triangulo", 0, 1, contenedor);
         btnLimpiar = createButton("Limpiar", 1, 1, contenedor);
-        btnRotar = createButton("Rotar", 4, 0, contenedor);
-        btnEscalar = createButton("Escalar", 4, 1, contenedor);
-        btnTrasladar = createButton("Trasladar", 6, 1, contenedor);
-        btnRellenar = createButton("Rellenar", 6, 0, contenedor);
-        btnEljrColor = createButton("Elegir Color", 7, 0, contenedor);
-        btnGuardar = createButton("Guardar", 10, 1, contenedor);
+        btnRotar = createButton("Rotar", 0, 4, contenedor);
+        btnEscalar = createButton("Escalar", 0, 5, contenedor);
+        btnTrasladar = createButton("Trasladar", 0, 8, contenedor);
+        btnRellenar = createButton("Rellenar", 0, 6, contenedor);
+        btnEljrColor = createButton("Elegir Color", 0, 7, contenedor);
+        btnGuardar = createButton("Guardar", 0, 10, contenedor);
     }
 
     private JButton createButton(String texto, int gridx, int gridy, GridBagConstraints contenedor) {
@@ -92,20 +92,20 @@ public class Control extends JPanel{
     }
 
     private void addLabels(GridBagConstraints contenedor) {
-        createLabels("Tipo de linea", 2, 0, contenedor);
-        createLabels("Grosor de linea", 2, 1, contenedor);
+        createLabels("Tipo de linea", 0, 2, contenedor);
+        createLabels("Grosor de linea", 0, 3, contenedor);
     }
 
     private void createLabels(String texto, int gridx, int gridy, GridBagConstraints contenedor) {
-        JLabel label = new JLabel(texto);
+        JLabel label = new JLabel(texto, JLabel.RIGHT);       
         contenedor.gridx = gridx;
         contenedor.gridy = gridy;
         add(label, contenedor);
     }
 
     private void addComboBoxes(GridBagConstraints contenedor) {
-        cmbxtipo = createComboBox(new String[] {"Continua", "Segmentada"}, 3, 0, contenedor);
-        cmbxgrosor = createComboBox(new String[] {"Normal", "Medio", "Gruesa"}, 3, 1, contenedor);
+        cmbxtipo = createComboBox(new String[] {"Continua", "Segmentada"}, 1, 2, contenedor);
+        cmbxgrosor = createComboBox(new String[] {"Normal", "Medio", "Gruesa"}, 1, 3, contenedor);
     }
 
     private JComboBox<String> createComboBox(String[] items, int gridx, int gridy, GridBagConstraints contenedor) {
@@ -117,10 +117,10 @@ public class Control extends JPanel{
     }
 
     private void addTextFields(GridBagConstraints contenedor) {
-        txtfldAngulo = createTextField("0", 5, 0, contenedor);
-        textfldEscala = createTextField("0.0", 5, 1, contenedor);
-        txtfldTrasX = createTextField("0", 7, 1, contenedor);
-        txtfldTrasY = createTextField("0", 8, 1, contenedor);
+        txtfldAngulo = createTextField("0", 1, 4, contenedor);
+        textfldEscala = createTextField("0.0", 1, 5, contenedor);
+        txtfldTrasX = createTextField("0", 0, 9, contenedor);
+        txtfldTrasY = createTextField("0", 1, 9, contenedor);
     }
 
     private JTextField createTextField(String texto, int gridx, int gridy, GridBagConstraints contenedor) {
@@ -291,7 +291,7 @@ public class Control extends JPanel{
                 JFileChooser fileChooser = new JFileChooser();
                 fileChooser.setDialogTitle("Guardar como");
 
-                fileChooser.setFileFilter(new FileNameExtensionFilter("Imagen PNG y JPG", "png","jpg"));
+                fileChooser.setFileFilter(new FileNameExtensionFilter("Imagen PNG", "png"));
 
                 int userSelection = fileChooser.showSaveDialog(null);
 

@@ -1,9 +1,9 @@
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 
 public class Main {
     public static void main(String[] args) {
-        FlatDarkLaf.setup();
-        Ventana interfaz = new Ventana(240, 160);
+        FlatLightLaf.setup();
+        Ventana interfaz = new Ventana(120, 75);
         interfaz.setVisible(true);
     }
 }

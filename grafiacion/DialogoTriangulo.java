@@ -23,27 +23,27 @@ public class DialogoTriangulo extends JDialog{
         setLayout(new GridLayout(7, 2));
 
         add(new JLabel("X1:"));
-        txtX1 = new JTextField("120");
+        txtX1 = new JTextField("60");
         add(txtX1);
         
         add(new JLabel("Y1:"));
-        txtY1 = new JTextField("60");
+        txtY1 = new JTextField("30");
         add(txtY1);
         
         add(new JLabel("X2:"));
-        txtX2 = new JTextField("140");
+        txtX2 = new JTextField("70");
         add(txtX2);
         
         add(new JLabel("Y2:"));
-        txtY2 = new JTextField("100");
+        txtY2 = new JTextField("50");
         add(txtY2);
         
         add(new JLabel("X3:"));
-        txtX3 = new JTextField("100");
+        txtX3 = new JTextField("50");
         add(txtX3);
         
         add(new JLabel("Y3:"));
-        txtY3 = new JTextField("100");
+        txtY3 = new JTextField("50");
         add(txtY3);
 
         

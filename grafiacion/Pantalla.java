@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-
 import javax.swing.JPanel;
 
 public class Pantalla extends JPanel{
@@ -22,7 +21,7 @@ public class Pantalla extends JPanel{
         llenarMatriz();
         setBounds(0,0, columnas*tamPixel, filas*tamPixel);
         setPreferredSize(new Dimension(columnas*tamPixel, filas*tamPixel));
-        color = new Color(255, 255, 255);
+        color = new Color(0, 0, 0);
     }
 
     public void setColor(Color color) {
@@ -30,19 +29,19 @@ public class Pantalla extends JPanel{
     }
 
     private void llenarMatriz() {
-        Color negro = new Color(10,23,67);
+        Color blanco = new Color(200,200,200);
         for (int i = 0; i < columnas; i++) {
             for (int j = 0; j < filas; j++) {
-                pixels[i][j] = new Pixel(i * tamPixel, j * tamPixel, negro);
+                pixels[i][j] = new Pixel(i * tamPixel, j * tamPixel, blanco);
             }
         }
     }  
     
     public void limpiarPixeles() {
-        Color negro = new Color(10,23,67);
+        Color blanco = new Color(200,200,200);
         for (int i = 0; i < columnas; i++) {
             for (int j = 0; j < filas; j++) {
-                pixels[i][j].setColor(negro);
+                pixels[i][j].setColor(blanco);
                 pixels[i][j].setPintado(false);
             }
         }

@@ -15,15 +15,15 @@ public class DialogoCirculo extends JDialog {
         setLayout(new GridLayout(4, 2));  
 
         add(new JLabel("Centro X:"));
-        txtCentroX = new JTextField("120");
+        txtCentroX = new JTextField("60");
         add(txtCentroX);
 
         add(new JLabel("Centro Y:"));
-        txtCentroY = new JTextField("80");
+        txtCentroY = new JTextField("40");
         add(txtCentroY);
 
         add(new JLabel("Radio:"));
-        txtRadio = new JTextField("20");
+        txtRadio = new JTextField("10");
         add(txtRadio);
 
         btnDibujar = new JButton("Dibujar");

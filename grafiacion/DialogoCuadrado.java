@@ -21,15 +21,15 @@ public class DialogoCuadrado extends JDialog {
         setLayout(new GridLayout(4, 2)); 
 
         add(new JLabel("Centro X:"));
-        txtCentroX = new JTextField("120");
+        txtCentroX = new JTextField("60");
         add(txtCentroX);
 
         add(new JLabel("Centro Y:"));
-        txtCentroY = new JTextField("80");
+        txtCentroY = new JTextField("40");
         add(txtCentroY);
 
         add(new JLabel("Lado:"));
-        txtLado = new JTextField("40");
+        txtLado = new JTextField("20");
         add(txtLado);
 
         btnDibujar = new JButton("Dibujar");

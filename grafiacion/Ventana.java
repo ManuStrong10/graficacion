@@ -1,7 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
-import javax.swing.BoxLayout;
+//import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -9,8 +9,8 @@ public class Ventana extends JFrame {
     private int WIDTH, HEIGHT;
 
     public Ventana(int columnas, int filas) {
-        WIDTH = columnas * Pixel.tamPixel + 16;
-        HEIGHT = filas * Pixel.tamPixel + 110;
+        WIDTH = columnas * Pixel.tamPixel + 320;
+        HEIGHT = filas * Pixel.tamPixel + 44;
         configuracionFrame();
         configuracionElementos(columnas, filas);
         pack();
@@ -18,7 +18,7 @@ public class Ventana extends JFrame {
     }
 
     private void configuracionFrame() {
-        setTitle("Graficacion por computadora");
+        setTitle("Primitivas de salida Final");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         setSize(WIDTH, HEIGHT);
@@ -28,12 +28,14 @@ public class Ventana extends JFrame {
 
     private void configuracionElementos(int columnas, int filas) {
         JPanel panel = new JPanel();
-        BoxLayout lay = new BoxLayout(panel, BoxLayout.PAGE_AXIS);
-        panel.setLayout(lay);
-        Pantalla pantalla = new Pantalla(columnas, filas);
-        panel.add(pantalla);
-        Control control = new Control(getWidth() - 2, 60, pantalla, this);
-        panel.add(control);
+        JPanel panel2 = new JPanel();        
+        panel2.setLayout(new BorderLayout());
+        panel.setLayout(new BorderLayout());
+        Pantalla pantalla = new Pantalla(columnas, filas);        
+        Control control = new Control(300, 400, pantalla, this);
+        panel2.add(control,BorderLayout.NORTH);
+        panel.add(panel2,BorderLayout.WEST);
+        panel.add(pantalla,BorderLayout.CENTER);
         add(panel, BorderLayout.CENTER);
     }
 }
