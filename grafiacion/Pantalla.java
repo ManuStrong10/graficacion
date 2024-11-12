@@ -16,8 +16,10 @@ public class Pantalla extends JPanel {
     private int tamPixel;
     public int getXmouse = -1;
     public int getYmouse = -1;
+    private Pila<Integer[]> pila;
 
     public Pantalla(int columnas, int filas) {
+	pila = new Pila<>();
         this.filas = filas;
         this.columnas = columnas;
         pixels = new Pixel[columnas][filas];
@@ -44,6 +46,9 @@ public class Pantalla extends JPanel {
 
 		getXmouse = columna;
 		getYmouse = fila;
+
+		// historial de pixeles pintados 
+		pila.push(new Integer[] {getXmouse, getYmouse});
                 
                 // Pintar el píxel en esa posición
                 pintarPixel(columna, fila);
@@ -55,6 +60,10 @@ public class Pantalla extends JPanel {
                 repaint();
             }
         });
+    }
+
+    public Pila<Integer[]> historial(){
+	return pila;
     }
 
     public void setColor(Color color) {

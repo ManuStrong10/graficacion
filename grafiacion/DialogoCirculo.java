@@ -9,9 +9,16 @@ public class DialogoCirculo extends JDialog {
     private JButton btnDibujar;
     private int[] datos;
     private Pantalla p;
+    private DistanciaEntrePuntos dist;
+
+    int x1;
+    int x2;
+    int y1;
+    int y2;
 
     public DialogoCirculo(Frame padre, Pantalla pa) {
         super(padre, "Círculo", true); 
+	dist = new DistanciaEntrePuntos();
 	this.p = pa;
         datos = new int[3];
         setLayout(new GridLayout(4, 2));  
@@ -24,8 +31,14 @@ public class DialogoCirculo extends JDialog {
         txtCentroY = new JTextField(String.valueOf(p.getYmouse));
         add(txtCentroY);
 
+	x1 = p.historial().top()[0];
+	x2 = p.historial().secondTop()[0];
+	y1 = p.historial().top()[1];
+	y2 = p.historial().secondTop()[1];
+
         add(new JLabel("Radio:"));
-        txtRadio = new JTextField("10");
+        txtRadio = new JTextField(String.valueOf( dist.calcularDistancia(x1, y1, x2, y2) ));
+	// System.out.println( dist.calcularDistancia(x1, y1, x2, y2) );
         add(txtRadio);
 
         btnDibujar = new JButton("Dibujar");
