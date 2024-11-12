@@ -42,8 +42,8 @@ public class Pantalla extends JPanel {
                 int columna = x / tamPixel;
                 int fila = y / tamPixel;
 
-		getXmouse = fila;
-		getYmouse = columna;
+		getXmouse = columna;
+		getYmouse = fila;
                 
                 // Pintar el píxel en esa posición
                 pintarPixel(columna, fila);
